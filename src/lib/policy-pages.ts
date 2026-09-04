@@ -8,6 +8,8 @@ export const policyNavItems = [
   { label: "Venue", href: "/#venue" },
   { label: "Destination", href: "/#destination" },
   { label: "Organizers", href: "/#partners" },
+  { label: "Aims & Objectives", href: "/aims-objectives" },
+  { label: "Membership", href: "/membership" },
 ]
 
 export const policyFooterLinks: FooterLinkItem[] = [
@@ -17,6 +19,8 @@ export const policyFooterLinks: FooterLinkItem[] = [
   { label: "Organising Committee", href: "/#leadership" },
   { label: "Venue", href: "/#venue" },
   { label: "Registration", href: "/#registration" },
+  { label: "Aims & Objectives", href: "/aims-objectives" },
+  { label: "Membership", href: "/membership" },
   { label: "Privacy Policy", href: "/privacy-policy" },
   { label: "Refund Policy", href: "/refund-policy" },
   { label: "Terms & Conditions", href: "/terms-and-conditions" },

@@ -3,16 +3,23 @@ import { SiteHeader } from "@/components/layout/site-header"
 import { StickyRegisterBar } from "@/components/layout/sticky-register-bar"
 import { AboutSection } from "@/components/sections/about-section"
 import { AssociatePartnersSection } from "@/components/sections/associate-partners-section"
+import { CinopseRelationshipSection } from "@/components/sections/cinopse-relationship-section"
 import { ConferenceHighlightsSection } from "@/components/sections/conference-highlights-section"
+import { CorePhilosophySection } from "@/components/sections/core-philosophy-section"
 import { HeroSection } from "@/components/sections/hero-section"
 import type { HeroSectionProps } from "@/components/sections/hero-section"
+import { MembershipTeaserSection } from "@/components/sections/membership-teaser-section"
+import { NumberedListSection } from "@/components/sections/numbered-list-section"
 import { OrganizingCommitteeSection } from "@/components/sections/organizing-committee-section"
 import { PopularDestinationSection } from "@/components/sections/popular-destination-section"
 import { ProgrammeSection } from "@/components/sections/programme-section"
 import { RegistrationSection } from "@/components/sections/registration-section"
 import { SiteFooter } from "@/components/sections/site-footer"
 import { VenueSection } from "@/components/sections/venue-section"
+import { VisionMissionSection } from "@/components/sections/vision-mission-section"
+import { WhatMakesDifferentSection } from "@/components/sections/what-makes-different-section"
 import { policyFooterLinks } from "@/lib/policy-pages"
+import { aimsAndObjectivesTeaser, membershipCategories } from "@/lib/association-content"
 
 const navItems = [
   { label: "About", href: "/#about" },
@@ -22,6 +29,8 @@ const navItems = [
   { label: "Venue", href: "/#venue" },
   { label: "Destination", href: "/#destination" },
   { label: "Organizers", href: "/#partners" },
+  { label: "Aims & Objectives", href: "/aims-objectives" },
+  { label: "Membership", href: "/membership" },
 ]
 
 const hero: HeroSectionProps = {
@@ -87,7 +96,7 @@ CiNOPSE was founded with a simple yet ambitious purpose: to create a world-class
 
 At CiNOPSE, our scientific programme is built upon the latest international clinical guidelines, landmark research, and evidence-based recommendations from leading medical societies across the world. However, medicine is more than published evidence. It is also the wisdom gained through years of clinical practice. CiNOPSE therefore provides a platform where distinguished experts share not only what the guidelines recommend, but also how they apply those recommendations in real-world patient care. It is this integration of scientific evidence and clinical experience that transforms knowledge into better decision-making.
 
-Our commitment extends beyond today’s clinicians. We aspire to inspire the next generation of physicians by creating an environment where young doctors, postgraduate trainees, researchers, and academicians can learn directly from experienced leaders, exchange ideas, ask questions, and build the confidence to lead the future of healthcare.
+Our commitment extends beyond today's clinicians. We aspire to inspire the next generation of physicians by creating an environment where young doctors, postgraduate trainees, researchers, and academicians can learn directly from experienced leaders, exchange ideas, ask questions, and build the confidence to lead the future of healthcare.
 
 CiNOPSE is more than a medical conference—it is a growing academic community driven by curiosity, collaboration, innovation, and excellence. Every session, every discussion, and every interaction is designed to strengthen multidisciplinary thinking and advance the standards of patient care.
 
@@ -149,7 +158,7 @@ const committee = {
     {
       initials: "UH",
       name: "Dr Usha Humbi",
-      caption: "Scientific Committee · Cinopse", 
+      caption: "Scientific Committee · Cinopse",
       image: "/doctor/usha-humbi.jpeg",
     },
     {
@@ -476,6 +485,99 @@ const programme = {
   ],
 }
 
+const visionMission = {
+  eyebrow: "Guiding Statements",
+  title: "Vision & Mission",
+  vision:
+    "To create a unified medical community where specialties converge, scientific evidence guides clinical decisions, and collaboration translates into better patient outcomes.",
+  mission:
+    "To promote continuous medical education, multidisciplinary collaboration, clinical research, innovation and evidence-based patient care across interconnected cardiovascular, neurological, renal, pulmonary, metabolic and sleep disorders.",
+}
+
+const corePhilosophy = {
+  eyebrow: "Our Core Philosophy",
+  title: "Connecting Specialties. Integrating Science. Improving Outcomes.",
+  description:
+    "Three commitments that shape every academic activity of the Karnataka CINOPSE Association.",
+  pillars: [
+    {
+      icon: "connecting" as const,
+      title: "Connecting Specialties",
+      description: "Bringing different medical disciplines together.",
+    },
+    {
+      icon: "integrating" as const,
+      title: "Integrating Science",
+      description:
+        "Combining guidelines, clinical evidence, research and real-world experience.",
+    },
+    {
+      icon: "improving" as const,
+      title: "Improving Outcomes",
+      description: "Translating knowledge into better clinical decisions and better patient care.",
+    },
+  ],
+}
+
+const whatMakesDifferent = {
+  eyebrow: "What Makes KCA Different",
+  title: "One Patient. Multiple Systems.",
+  statement:
+    "KCA is built around the belief that modern medicine cannot always be divided into isolated specialties. A patient with obesity, diabetes, hypertension, CKD, OSA and MASLD may require multiple specialties, but the patient's disease is interconnected.",
+  pathway: [
+    "Obesity",
+    "Diabetes",
+    "CKD",
+    "Cardiovascular Disease",
+    "Obstructive Sleep Apnoea",
+    "MASLD",
+  ],
+  closingTitle: "One Integrated Approach",
+  closingDescription:
+    "The association aims to create a professional environment where physicians can learn from different specialties, challenge existing concepts, collaborate on research and translate scientific evidence into practical clinical care.",
+}
+
+const aimsTeaser = {
+  eyebrow: "Our Purpose",
+  title: "Aims & Objectives",
+  description:
+    "Twelve commitments that guide KCA's academic, research and patient-care activities — from multidisciplinary medicine to public health.",
+  items: aimsAndObjectivesTeaser,
+  ctaLabel: "View All 12 Aims & Objectives",
+  ctaHref: "/aims-objectives",
+}
+
+const cinopseRelationship = {
+  eyebrow: "Our Flagship Conference",
+  title: "CINOPSE India & KCA",
+  paragraphs: [
+    "Karnataka CINOPSE Association (KCA) is the parent academic and professional association. CINOPSE India is the flagship scientific conference of the association, bringing together physicians, specialists, researchers, postgraduate students and allied healthcare professionals to exchange knowledge and develop collaborative approaches to complex clinical problems.",
+  ],
+  activitiesLabel: "Association Activities",
+  activities: [
+    "CINOPSE India Conference",
+    "Continuing Medical Education",
+    "Clinical Workshops",
+    "Scientific Webinars",
+    "Medical Quizzes",
+    "Research Initiatives",
+    "Publications",
+    "Consensus & Clinical Pathways",
+    "Young Physician Programmes",
+    "Academic Collaborations",
+  ],
+}
+
+const membershipTeaser = {
+  eyebrow: "Join KCA",
+  title: "Suggested Membership Categories",
+  description:
+    "KCA welcomes qualified healthcare professionals interested in integrated medicine, scientific education and improved patient outcomes.",
+  categories: membershipCategories,
+  ctaLabel: "View Full Membership Details",
+  ctaHref: "/membership",
+}
+
 const footer = {
   columns: [
     {
@@ -519,6 +621,12 @@ export default function Home() {
           <RegistrationSection {...registration} />
           <PopularDestinationSection {...popularDestination} />
           <AssociatePartnersSection {...associatePartners} />
+          <VisionMissionSection {...visionMission} />
+          <CorePhilosophySection {...corePhilosophy} />
+          <WhatMakesDifferentSection {...whatMakesDifferent} />
+          <NumberedListSection id="aims" {...aimsTeaser} />
+          <CinopseRelationshipSection {...cinopseRelationship} />
+          <MembershipTeaserSection {...membershipTeaser} />
         </main>
         <SiteFooter {...footer} />
       </GsapProvider>
