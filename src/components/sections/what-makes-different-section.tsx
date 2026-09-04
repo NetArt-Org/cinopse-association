@@ -20,7 +20,7 @@ export function WhatMakesDifferentSection({
   closingDescription,
 }: WhatMakesDifferentSectionProps) {
   return (
-    <section className="bg-[color:var(--cinopse-cream)] py-16 md:py-20 lg:py-24">
+    <section className="bg-[color:var(--cinopse-cream)] pt-10 pb-16 md:pt-12 md:pb-20 lg:pt-14 lg:pb-24">
       <div className="mx-auto max-w-[1160px] px-7">
         <SectionHeading eyebrow={eyebrow} title={title} />
 

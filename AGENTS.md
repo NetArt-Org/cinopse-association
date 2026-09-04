@@ -2,7 +2,7 @@
 
 # Project Overview
 
-Build the official **CiNOPSE India 2026** website using:
+Build the official **CINOPSE India 2026** website using:
 
 - Next.js
 - TypeScript
@@ -14,7 +14,7 @@ The website should closely replicate the **layout, visual hierarchy, spacing, na
 
 https://2026.diabetesindia.org.in/
 
-This project is **not** about redesigning the website. Recreate the same design language and component patterns while replacing the branding, colors, and content with CiNOPSE assets.
+This project is **not** about redesigning the website. Recreate the same design language and component patterns while replacing the branding, colors, and content with CINOPSE assets.
 
 ---
 
@@ -54,7 +54,7 @@ Avoid:
 
 Follow the same color hierarchy as the reference website.
 
-These colors are based on the reference UI and should be treated as temporary design tokens until the final CiNOPSE brand colors are provided.
+These colors are based on the reference UI and should be treated as temporary design tokens until the final CINOPSE brand colors are provided.
 
 ```ts
 export const colors = {
@@ -288,4 +288,4 @@ During development, use **Lorem Ipsum** or placeholder content wherever actual c
 
 Do not fabricate conference information.
 
-All placeholder content will be replaced with official CiNOPSE content later.
+All placeholder content will be replaced with official CINOPSE content later.

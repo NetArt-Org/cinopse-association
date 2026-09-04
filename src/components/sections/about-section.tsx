@@ -181,7 +181,7 @@ export function AboutSection({
       </div>
 
       <div className="mx-auto max-w-[1160px] px-7">
-        <div data-reveal-group className="mt-11 grid grid-cols-2 gap-3.5 md:grid-cols-3 lg:grid-cols-5">
+        <div data-reveal-group className="mt-11 grid grid-cols-1 gap-3.5 sm:grid-cols-3">
           {pillars.map((pillar) => {
             const Icon = pillarIconMap[pillar.icon]
 

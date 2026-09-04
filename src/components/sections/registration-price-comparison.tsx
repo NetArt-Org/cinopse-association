@@ -1444,7 +1444,7 @@ async function openRazorpayCheckout({
       key: payment.keyId,
       amount: payment.amount,
       currency: payment.currency,
-      name: "CiNOPSE India 2026",
+      name: "CINOPSE India 2026",
       description: "Conference registration",
       order_id: payment.orderId,
       prefill: {

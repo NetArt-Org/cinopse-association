@@ -3,6 +3,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
+import { ChevronDown } from "lucide-react"
 import { useEffect, useState } from "react"
 
 import { MobileNavigation } from "@/components/layout/mobile-navigation"
@@ -11,6 +12,7 @@ import { useRegistrationTicketCta } from "@/hooks/use-registration-ticket-cta"
 export type NavItem = {
   label: string
   href: string
+  children?: NavItem[]
 }
 
 export function SiteHeader({ items }: { items: NavItem[] }) {
@@ -82,7 +84,52 @@ export function SiteHeader({ items }: { items: NavItem[] }) {
               {items.map((item) => {
                 const isActive =
                   item.href === pathname ||
-                  (pathname === "/" && item.href === "/#home")
+                  (pathname === "/" && item.href === "/#home") ||
+                  (item.children?.some((child) => child.href === pathname) ?? false)
+
+                if (item.children?.length) {
+                  return (
+                    <div key={item.href} className="group relative">
+                      <Link
+                        href={item.href}
+                        aria-current={isActive ? "page" : undefined}
+                        className={`group/link relative flex items-center gap-1 py-1.5 text-[12.5px] leading-none font-normal transition-colors hover:text-white ${
+                          isActive ? "text-white" : "text-white/80"
+                        }`}
+                      >
+                        {item.label}
+                        <ChevronDown
+                          className="size-3 transition-transform duration-300 group-hover:rotate-180"
+                          aria-hidden="true"
+                        />
+                        <span
+                          className={`absolute bottom-0 left-0 h-[1.5px] bg-[color:var(--cinopse-accent)] transition-[right] duration-300 ease-[cubic-bezier(.22,.9,.18,1)] group-hover/link:right-0 ${
+                            isActive ? "right-0" : "right-full"
+                          }`}
+                        />
+                      </Link>
+
+                      <div className="invisible absolute top-full left-1/2 z-10 w-56 -translate-x-1/2 pt-3 opacity-0 transition-[opacity,visibility] duration-200 ease-[cubic-bezier(.22,.9,.18,1)] group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100">
+                        <div className="overflow-hidden rounded-[14px] border border-white/15 bg-[rgba(13,49,105,0.96)] py-2 shadow-[0_18px_40px_rgba(6,26,58,0.4)] backdrop-blur-[14px]">
+                          {item.children.map((child) => (
+                            <Link
+                              key={child.href}
+                              href={child.href}
+                              aria-current={child.href === pathname ? "page" : undefined}
+                              className={`block px-5 py-2.5 text-[12.5px] leading-none transition-colors hover:bg-white/10 hover:text-[color:var(--cinopse-accent)] ${
+                                child.href === pathname
+                                  ? "text-[color:var(--cinopse-accent)]"
+                                  : "text-white/85"
+                              }`}
+                            >
+                              {child.label}
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  )
+                }
 
                 return (
                   <Link

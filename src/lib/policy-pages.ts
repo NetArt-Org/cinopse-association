@@ -1,15 +1,20 @@
 import type { FooterLinkItem } from "@/components/sections/site-footer"
 
 export const policyNavItems = [
-  { label: "About", href: "/#about" },
+  {
+    label: "About",
+    href: "/#about",
+    children: [
+      { label: "Aims & Objectives", href: "/aims-objectives" },
+      { label: "Membership", href: "/membership" },
+    ],
+  },
   { label: "Highlights", href: "/#highlights" },
   { label: "Agenda", href: "/agenda" },
   { label: "Committee", href: "/#leadership" },
   { label: "Venue", href: "/#venue" },
   { label: "Destination", href: "/#destination" },
   { label: "Organizers", href: "/#partners" },
-  { label: "Aims & Objectives", href: "/aims-objectives" },
-  { label: "Membership", href: "/membership" },
 ]
 
 export const policyFooterLinks: FooterLinkItem[] = [
