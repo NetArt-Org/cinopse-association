@@ -3,24 +3,22 @@
 import Image from "next/image"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { ChevronDown } from "lucide-react"
 import { useEffect, useState } from "react"
 
 import { MobileNavigation } from "@/components/layout/mobile-navigation"
-import { useRegistrationTicketCta } from "@/hooks/use-registration-ticket-cta"
 
 export type NavItem = {
   label: string
   href: string
-  children?: NavItem[]
 }
+
+const CTA_LABEL = "Visit CINOPSE India"
+const CTA_HREF = "https://cinopse.in"
 
 export function SiteHeader({ items }: { items: NavItem[] }) {
   const pathname = usePathname()
   const [scrolled, setScrolled] = useState(false)
   const [progress, setProgress] = useState(0)
-  const { label: registerCtaLabel, openRegistrationOrTicket } =
-    useRegistrationTicketCta()
   const solidHeader = scrolled || pathname !== "/"
 
   useEffect(() => {
@@ -59,7 +57,7 @@ export function SiteHeader({ items }: { items: NavItem[] }) {
             <Link
               href="/#home"
               className="flex items-center gap-2.5 text-white"
-              aria-label="CINOPSE India 2026 home"
+              aria-label="Karnataka CINOPSE Association home"
             >
               <Image
                 src="/logo.jpg"
@@ -70,12 +68,11 @@ export function SiteHeader({ items }: { items: NavItem[] }) {
                 className="size-9 shrink-0 rounded-full bg-white object-cover shadow-[0_3px_10px_rgba(6,26,58,0.3)]"
               />
               <span className="grid gap-1">
-                <span className="max-w-[20ch] font-display text-[clamp(13px,3.2vw,19px)] leading-tight font-semibold tracking-[0.01em] text-balance text-white">
-                  CINOPSE INDIA MEDICAL SUMMIT PVT LTD
+                <span className="max-w-[24ch] font-display text-[clamp(13px,3.2vw,19px)] leading-tight font-semibold tracking-[0.01em] text-balance text-white">
+                  KARNATAKA CINOPSE ASSOCIATION
                 </span>
                 <span className="block max-w-[220px] font-sans text-[6.5px] leading-[1.25] font-medium tracking-[0.07em] text-white/62 uppercase sm:max-w-[280px] sm:text-[7.5px] min-[1120px]:max-w-none min-[1120px]:text-[8.5px]">
-                  Combined Initiative for Nurturing Outcomes through Precision
-                  Medicine with Scientific Evidence
+                  Connecting Specialties. Integrating Science. Improving Outcomes.
                 </span>
               </span>
             </Link>
@@ -84,52 +81,7 @@ export function SiteHeader({ items }: { items: NavItem[] }) {
               {items.map((item) => {
                 const isActive =
                   item.href === pathname ||
-                  (pathname === "/" && item.href === "/#home") ||
-                  (item.children?.some((child) => child.href === pathname) ?? false)
-
-                if (item.children?.length) {
-                  return (
-                    <div key={item.href} className="group relative">
-                      <Link
-                        href={item.href}
-                        aria-current={isActive ? "page" : undefined}
-                        className={`group/link relative flex items-center gap-1 py-1.5 text-[12.5px] leading-none font-normal transition-colors hover:text-white ${
-                          isActive ? "text-white" : "text-white/80"
-                        }`}
-                      >
-                        {item.label}
-                        <ChevronDown
-                          className="size-3 transition-transform duration-300 group-hover:rotate-180"
-                          aria-hidden="true"
-                        />
-                        <span
-                          className={`absolute bottom-0 left-0 h-[1.5px] bg-[color:var(--cinopse-accent)] transition-[right] duration-300 ease-[cubic-bezier(.22,.9,.18,1)] group-hover/link:right-0 ${
-                            isActive ? "right-0" : "right-full"
-                          }`}
-                        />
-                      </Link>
-
-                      <div className="invisible absolute top-full left-1/2 z-10 w-56 -translate-x-1/2 pt-3 opacity-0 transition-[opacity,visibility] duration-200 ease-[cubic-bezier(.22,.9,.18,1)] group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100">
-                        <div className="overflow-hidden rounded-[14px] border border-white/15 bg-[rgba(13,49,105,0.96)] py-2 shadow-[0_18px_40px_rgba(6,26,58,0.4)] backdrop-blur-[14px]">
-                          {item.children.map((child) => (
-                            <Link
-                              key={child.href}
-                              href={child.href}
-                              aria-current={child.href === pathname ? "page" : undefined}
-                              className={`block px-5 py-2.5 text-[12.5px] leading-none transition-colors hover:bg-white/10 hover:text-[color:var(--cinopse-accent)] ${
-                                child.href === pathname
-                                  ? "text-[color:var(--cinopse-accent)]"
-                                  : "text-white/85"
-                              }`}
-                            >
-                              {child.label}
-                            </Link>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  )
-                }
+                  (pathname === "/" && item.href === "/#home")
 
                 return (
                   <Link
@@ -149,24 +101,21 @@ export function SiteHeader({ items }: { items: NavItem[] }) {
                   </Link>
                 )
               })}
-              <button
-                type="button"
-                onClick={openRegistrationOrTicket}
+              <Link
+                href={CTA_HREF}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group inline-flex items-center gap-2 rounded-full bg-[color:var(--cinopse-accent)] px-[22px] py-3 text-xs leading-none font-medium whitespace-nowrap text-[color:var(--cinopse-primary-deep)] shadow-[0_4px_14px_rgba(6,26,58,0.25)] transition-[transform,box-shadow,background] duration-300 ease-[cubic-bezier(.22,.9,.18,1)] hover:-translate-y-0.5 hover:bg-[color:var(--cinopse-accent-hi)] hover:shadow-[0_10px_22px_rgba(217,164,65,0.4)]"
               >
-                {registerCtaLabel}
+                {CTA_LABEL}
                 <span className="transition-transform duration-300 group-hover:translate-x-1">
                   →
                 </span>
-              </button>
+              </Link>
             </div>
 
             <div className="xl:hidden">
-              <MobileNavigation
-                items={items}
-                onRegister={openRegistrationOrTicket}
-                registerLabel={registerCtaLabel}
-              />
+              <MobileNavigation items={items} ctaLabel={CTA_LABEL} ctaHref={CTA_HREF} />
             </div>
           </div>
         </nav>

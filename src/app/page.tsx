@@ -1,93 +1,35 @@
 import { GsapProvider } from "@/components/layout/gsap-provider"
 import { SiteHeader } from "@/components/layout/site-header"
-import { StickyRegisterBar } from "@/components/layout/sticky-register-bar"
 import { AboutSection } from "@/components/sections/about-section"
 import { CinopseRelationshipSection } from "@/components/sections/cinopse-relationship-section"
-import { ConferenceHighlightsSection } from "@/components/sections/conference-highlights-section"
 import { HeroSection } from "@/components/sections/hero-section"
 import type { HeroSectionProps } from "@/components/sections/hero-section"
 import { MembershipTeaserSection } from "@/components/sections/membership-teaser-section"
 import { NumberedListSection } from "@/components/sections/numbered-list-section"
 import { OrganizingCommitteeSection } from "@/components/sections/organizing-committee-section"
-import { PopularDestinationSection } from "@/components/sections/popular-destination-section"
-import { ProgrammeSection } from "@/components/sections/programme-section"
-import { RegistrationSection } from "@/components/sections/registration-section"
 import { SiteFooter } from "@/components/sections/site-footer"
-import { VenueSection } from "@/components/sections/venue-section"
 import { WhatMakesDifferentSection } from "@/components/sections/what-makes-different-section"
 import { policyFooterLinks } from "@/lib/policy-pages"
 import { aimsAndObjectivesTeaser, membershipCategories } from "@/lib/association-content"
 
 const navItems = [
-  {
-    label: "About",
-    href: "/#about",
-    children: [
-      { label: "Aims & Objectives", href: "/aims-objectives" },
-      { label: "Membership", href: "/membership" },
-    ],
-  },
-  { label: "Highlights", href: "/#highlights" },
-  { label: "Agenda", href: "/agenda" },
+  { label: "About", href: "/#about" },
+  { label: "Aims & Objectives", href: "/#aims" },
+  { label: "Membership", href: "/#membership" },
   { label: "Committee", href: "/#leadership" },
-  { label: "Venue", href: "/#venue" },
-  { label: "Destination", href: "/#destination" },
-  { label: "Organizers", href: "/#partners" },
 ]
 
 const hero: HeroSectionProps = {
-  eyebrow:
-    "CME Summit · Cardio · Neurology · Renal · Obesity · Pulmonary · Sleep Medicine",
-  titleWords: ["KARNATAKA", "CINOPSE", "ASSOCIATION"],
-  goldWord: "CINOPSE",
-  tagline: [
-    "One Place.",
-    "One Agenda.",
-    "One Vision.",
-    "Infinite Possibilities.",
-  ],
-  description:
-    "A unified medical community where specialties converge, scientific evidence guides clinical decisions, and collaboration translates into better patient outcomes.",
   logo: {
     src: "/logo.jpg",
     alt: "CINOPSE logo",
   },
-  ctaLabel: "Register Now",
-  secondaryCtaLabel: "View Agenda",
-  secondaryCtaHref: "/#programme",
-  meta: [
-    {
-      title: "Sunday, 27 September 2026",
-      description: "Save the date",
-      icon: "calendar",
-    },
-    {
-      title: "Jawaharlal Nehru Planetarium",
-      description: "Sankey Road, Bengaluru",
-      icon: "location",
-    },
-    {
-      title: "CME Summit",
-      description: "Multi-specialty sessions",
-      icon: "medical",
-    },
-  ],
-  specialties: [
-    "Cardiology",
-    "Nephrology",
-    "Obesity & Diabetes",
-    "Pulmonology",
-    "Sleep Medicine",
-    "Metabolic Medicine",
-  ],
-  stripItems: [
-    "ONE PLACE",
-    "ONE AGENDA",
-    "ONE VISION",
-    "INFINITE POSSIBILITIES",
-    "27 SEPTEMBER 2026",
-    "BENGALURU",
-  ],
+  backgroundImage: {
+    src: "/images/cinopse-hero-cover.png",
+    alt: "Jawaharlal Nehru Planetarium and the Bengaluru skyline at dusk",
+  },
+  title: "CINOPSE India 2026",
+  ctaHref: "https://cinopse.in",
 }
 
 const committee = {
@@ -167,93 +109,9 @@ const committee = {
   ],
 }
 
-const venue = {
-  eyebrow: "Location",
-  title: "About Venue",
-  mapEmbedUrl:
-    "https://maps.google.com/maps?q=Jawaharlal%20Nehru%20Planetarium%2C%20Sankey%20Road%2C%20Bengaluru&z=16&output=embed",
-  mapCaption:
-    "Jawaharlal Nehru Planetarium · Sankey Road, High Grounds, Bengaluru",
-  mapTitle: "Map — Jawaharlal Nehru Planetarium, Bengaluru",
-  venueTitle: "Jawaharlal Nehru Planetarium",
-  description:
-    "Sri T. Chowdaiah Road (Sankey Road), High Grounds, Bengaluru – 560001, Karnataka, India. An iconic city-centre landmark — easy to reach, and a fitting stage for a conference about looking forward.",
-  details: [
-    {
-      icon: "sparkle" as const,
-      text: "Sunday, 27 September 2026",
-    },
-    { icon: "phone" as const, text: "+91 63817 86183 · +91 99023 40225" },
-    { icon: "email" as const, text: "cinopseindiamedical@gmail.com" },
-  ],
-  ctaLabel: "Get Directions",
-  ctaHref:
-    "https://www.google.com/maps/place/Jawaharlal+Nehru+Planetarium/@12.9848665,77.5896341,17z/data=!3m1!4b1!4m6!3m5!1s0x3bae166bedda581f:0x757d1ae9f63c2835!8m2!3d12.9848665!4d77.5896341!16s%2Fg%2F1jky_rhrc?entry=ttu&g_ep=EgoyMDI2MDcyMi4wIKXMDSoASAFQAw%3D%3D",
-}
-
-const registration = {
-  eyebrow: "Join Us",
-  title: "Registration",
-  description:
-    "Registration is open — rates rise at every deadline. Pick your category to compare.",
-  comparison: {
-    audiences: ["Delegates", "PG and Others", "International Delegates"],
-    eventDateLabel: "Sunday, 27 September 2026",
-    eventDate: "2026-09-27T08:00:00+05:30",
-    windowStart: "2026-07-24T00:00:00+05:30",
-    note: "Delegate fees change automatically by date — ₹750 until September 10, then ₹1,000. PG & Others ₹500, International Delegates ₹2,500.",
-    ctaLabel: "Register Now",
-    included: [
-      "Access to all 22 scientific sessions across 10 focus areas",
-      "Entry to case-based discussions and the panel debate",
-      "Hands-on workshop access",
-      "Lunch and refreshments through the day",
-      "Networking access with faculty and fellow delegates",
-      "Post-event access to agenda and session resources",
-    ],
-  },
-}
-
-const popularDestination = {
-  eyebrow: "Explore",
-  title: "Popular Destination",
-  heading: "Bengaluru — The Garden City of India's Innovation",
-  paragraphs: [
-    "CINOPSE India 2026 comes home to Namma Bengaluru — where India's medical institutions, research centres, and technology ecosystem meet leafy boulevards and legendary weather.",
-    "From clinical mornings at the Planetarium to cultural evenings across the city, plan a visit that goes beyond the conference hall.",
-  ],
-  ctaLabel: "Explore Bengaluru",
-  ctaHref:
-    "https://www.google.com/maps/place/Bengaluru,+Karnataka/@12.987977,77.6219718,11z/data=!3m1!4b1!4m6!3m5!1s0x3bae1670c9b44e6d:0xf8dfc3e8517e4fe0!8m2!3d12.9628957!4d77.57754!16zL20vMDljMTc?entry=ttu&g_ep=EgoyMDI2MDcyMi4wIKXMDSoASAFQAw%3D%3D",
-  cards: [
-    {
-      title: "Vidhana Soudha",
-      description: "The granite heart of the city",
-      image: "/images/vidhana-soudha.jpg",
-      alt: "Vidhana Soudha, Bengaluru",
-    },
-    {
-      title: "Lalbagh Gardens",
-      description: "The Glass House of the Garden City",
-      image: "/images/lalbagh.jpg",
-      alt: "Lalbagh Glass House, Bengaluru",
-    },
-    {
-      title: "Bangalore Palace",
-      description: "Tudor towers amid the tech city",
-      image: "/images/bangalore-palace.jpg",
-      alt: "Bangalore Palace",
-    },
-  ],
-}
-
 const about = {
   eyebrow: "Who We Are",
   title: "About Karnataka CINOPSE Association",
-  eventDate: "2026-09-27T08:00:00+05:30",
-  dateLabel: "27 Sep",
-  eventLabel: "Sunday · 2026",
-  locationLabel: "Bengaluru · India",
   paragraphs: [
     "Karnataka CINOPSE Association (KCA) is a multidisciplinary academic and professional association dedicated to integrating Cardiology, Neurology, Nephrology, Pulmonology, Metabolic Medicine and Sleep Medicine through evidence-based, precision-oriented healthcare.",
     "Our vision is to create a unified medical community where specialties converge, scientific evidence guides clinical decisions, and collaboration translates into better patient outcomes.",
@@ -283,141 +141,6 @@ const about = {
       description: "Translating knowledge into better clinical decisions and better patient care.",
     },
   ],
-  stats: [
-    { value: "22", label: "Scientific Sessions" },
-    { value: "10", label: "Focus Areas" },
-    { value: "1", label: "Day, One Roof" },
-    { value: "∞", label: "Possibilities", accent: true },
-  ],
-}
-
-const conferenceHighlights = {
-  eyebrow: "Scientific Programme",
-  title: "Conference Highlights",
-  description:
-    "Integrating metabolic medicine across specialties — grounded in the latest international guidelines.",
-  highlights: [
-    {
-      number: "01",
-      title: "Latest Guideline Updates",
-      description: "ADA 2026, EASD, ESC, ACE, AHA, AASM & IOF",
-    },
-    {
-      number: "02",
-      title: "GLP-1, Dual & Triple Agonists",
-      description: "The future of obesity & diabetes care",
-    },
-    {
-      number: "03",
-      title: "Cardio-Renal-Metabolic Syndrome",
-      description: "One system, one integrated conversation",
-    },
-    {
-      number: "04",
-      title: "CGM & Diabetes Technology",
-      description: "Continuous glucose monitoring in practice",
-    },
-    {
-      number: "05",
-      title: "Artificial Intelligence",
-      description: "AI in everyday clinical practice",
-    },
-    {
-      number: "06",
-      title: "MASLD / Fatty Liver Disease",
-      description: "From screening to management",
-    },
-    {
-      number: "07",
-      title: "Dyslipidemia",
-      description: "Beyond LDL",
-    },
-    {
-      number: "08",
-      title: "Hypertension",
-      description: "From guidelines to real-world practice",
-    },
-    {
-      number: "09",
-      title: "Sleep Disorder",
-      description: "The cardiometabolic risk connection",
-    },
-    {
-      number: "10",
-      title: "Osteoporosis & Sarcopenia",
-      description: "Healthy aging across specialties",
-    },
-    {
-      number: "11",
-      title: "Case Discussions & Panel Debate",
-      description: "Interactive, real-world clinical cases",
-    },
-    {
-      number: "12",
-      title: "Workshops & Awards",
-      description: "Young Investigator Awards & networking",
-    },
-  ],
-  focusLabel: "Focus Areas",
-  focusAreas: [
-    "Cardiology",
-    "Diabetes",
-    "Obesity",
-    "Pulmonology",
-    "Sleep Medicine",
-    "Nephrology",
-    "Fatty Liver Disease",
-    "Dyslipidemia",
-    "Osteoporosis",
-    "Hypertension",
-  ],
-}
-
-const programme = {
-  eyebrow: "Programme",
-  title: "The Programme — At a Glance",
-  description:
-    "Sunday, 27 September 2026 · Jawaharlal Nehru Planetarium, Bengaluru. The detailed scientific programme is available in the agenda PDF.",
-  ctaLabel: "Explore the Full Agenda",
-  ctaHref: "/agenda",
-  segments: [
-    {
-      segment: "Registration & Welcome",
-      focus: "Check-in, delegate kit collection, opening remarks",
-    },
-    {
-      segment: "Morning Sessions",
-      focus:
-        "Latest Guideline Updates (ADA 2026, EASD, ESC, ACE, AHA, AASM & IOF); GLP-1, Dual & Triple Agonists; Cardio-Renal-Metabolic Syndrome",
-    },
-    {
-      segment: "Mid-Morning",
-      focus:
-        "CGM & Diabetes Technology; Artificial Intelligence in everyday clinical practice",
-    },
-    {
-      segment: "Networking Lunch",
-      focus: "Lunch and informal networking with faculty and fellow delegates",
-    },
-    {
-      segment: "Afternoon Sessions",
-      focus:
-        "MASLD / Fatty Liver Disease; Dyslipidemia Beyond LDL; Hypertension — guidelines to real-world practice",
-    },
-    {
-      segment: "Late Afternoon",
-      focus:
-        "Sleep Disorder and the cardiometabolic risk connection; Osteoporosis & Sarcopenia — healthy aging across specialties",
-    },
-    {
-      segment: "Case Discussions & Panel Debate",
-      focus: "Interactive, real-world clinical case presentations and panel discussion",
-    },
-    {
-      segment: "Workshops & Awards",
-      focus: "Hands-on workshops, Young Investigator Awards and closing remarks",
-    },
-  ],
 }
 
 const whatMakesDifferent = {
@@ -439,13 +162,12 @@ const whatMakesDifferent = {
 }
 
 const aimsTeaser = {
+  id: "aims",
   eyebrow: "Our Purpose",
   title: "Aims & Objectives",
   description:
-    "Twelve commitments that guide KCA's academic, research and patient-care activities — from multidisciplinary medicine to public health.",
+    "Commitments that guide KCA's academic, research and patient-care activities — from multidisciplinary medicine to public health.",
   items: aimsAndObjectivesTeaser,
-  ctaLabel: "View All 12 Aims & Objectives",
-  ctaHref: "/aims-objectives",
 }
 
 const cinopseRelationship = {
@@ -467,6 +189,8 @@ const cinopseRelationship = {
     "Young Physician Programmes",
     "Academic Collaborations",
   ],
+  ctaLabel: "Visit CINOPSE India",
+  ctaHref: "https://cinopse.in",
 }
 
 const membershipTeaser = {
@@ -475,22 +199,20 @@ const membershipTeaser = {
   description:
     "KCA welcomes qualified healthcare professionals interested in integrated medicine, scientific education and improved patient outcomes.",
   categories: membershipCategories,
-  ctaLabel: "View Full Membership Details",
-  ctaHref: "/membership",
 }
 
 const footer = {
   columns: [
     {
-      title: "CINOPSE",
-      brandEmphasis: "India 2026",
+      title: "Karnataka",
+      brandEmphasis: "CINOPSE Association",
       logo: {
         src: "/logo.jpg",
         alt: "CINOPSE logo",
       },
       paragraphs: [
-        "Combined Initiative for Nurturing Outcomes through Precision Medicine with Scientific Evidence",
-        "CME Summit for Cardio, Renal, Obesity, Pulmonary & Sleep Medicine — Sunday, 27 September 2026, Jawaharlal Nehru Planetarium, Bengaluru.",
+        "Connecting Specialties. Integrating Science. Improving Outcomes.",
+        "A multidisciplinary academic and professional association integrating Cardiology, Neurology, Nephrology, Pulmonology, Metabolic Medicine and Sleep Medicine.",
       ],
     },
   ],
@@ -498,13 +220,13 @@ const footer = {
   links: policyFooterLinks,
   contactTitle: "Contact",
   contacts: [
-    "+91 63817 86183",
-    "+91 99023 40225",
-    "cinopseindiamedical@gmail.com",
-    "www.cinopse.in",
+    "info@cinopseassociation.in",
+    "www.cinopseassociation.in",
+    "Karnataka, India",
   ],
   socialLinks: [],
-  copyright: "© 2026 CINOPSE India. All rights reserved.",
+  copyright: "© 2026 Karnataka CINOPSE Association. All rights reserved.",
+  tagline: "Connecting Specialties. Integrating Science. Improving Outcomes.",
 }
 
 export default function Home() {
@@ -515,20 +237,14 @@ export default function Home() {
         <main>
           <HeroSection {...hero} />
           <AboutSection {...about} />
-          <ConferenceHighlightsSection {...conferenceHighlights} />
-          <ProgrammeSection {...programme} />
           <OrganizingCommitteeSection {...committee} />
-          <VenueSection {...venue} />
-          <RegistrationSection {...registration} />
-          <PopularDestinationSection {...popularDestination} />
           <WhatMakesDifferentSection {...whatMakesDifferent} />
-          <NumberedListSection id="aims" {...aimsTeaser} />
+          <NumberedListSection {...aimsTeaser} />
           <CinopseRelationshipSection {...cinopseRelationship} />
           <MembershipTeaserSection {...membershipTeaser} />
         </main>
         <SiteFooter {...footer} />
       </GsapProvider>
-      <StickyRegisterBar />
     </div>
   )
 }

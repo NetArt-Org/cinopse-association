@@ -12,22 +12,17 @@ import type { NavItem } from "@/components/layout/site-header"
 
 export function MobileNavigation({
   items,
-  onRegister,
-  registerLabel = "Register Now",
+  ctaLabel,
+  ctaHref,
 }: {
   items: NavItem[]
-  onRegister: () => void
-  registerLabel?: string
+  ctaLabel: string
+  ctaHref: string
 }) {
   const pathname = usePathname()
   const [isOpen, setIsOpen] = useState(false)
   const [mounted, setMounted] = useState(false)
   const linksRef = useRef<HTMLDivElement>(null)
-
-  const flatItems = items.flatMap((item) => [
-    { label: item.label, href: item.href },
-    ...(item.children ?? []),
-  ])
 
   useEffect(() => {
     setMounted(true)
@@ -56,11 +51,6 @@ export function MobileNavigation({
 
     return () => ctx.revert()
   }, [isOpen])
-
-  function handleRegister() {
-    setIsOpen(false)
-    onRegister()
-  }
 
   return (
     <div>
@@ -110,14 +100,14 @@ export function MobileNavigation({
                     />
                     <span className="grid gap-1">
                       <span className="font-display text-base font-semibold">
-                        CINOPSE{" "}
+                        Karnataka{" "}
                         <em className="block font-sans text-[10px] tracking-[0.18em] text-[color:var(--cinopse-accent)] not-italic">
-                          INDIA 2026
+                          CINOPSE ASSOCIATION
                         </em>
                       </span>
                       <span className="max-w-[220px] font-sans text-[8px] leading-[1.35] tracking-[0.08em] text-white/60 uppercase">
-                        Combined Initiative for Nurturing Outcomes through
-                        Precision Medicine with Scientific Evidence
+                        Connecting Specialties. Integrating Science. Improving
+                        Outcomes.
                       </span>
                     </span>
                   </div>
@@ -136,7 +126,7 @@ export function MobileNavigation({
                   className="flex flex-1 flex-col py-8"
                   aria-label="Mobile navigation"
                 >
-                  {flatItems.map((item) => {
+                  {items.map((item) => {
                     const isActive = item.href === pathname
 
                     return (
@@ -154,19 +144,21 @@ export function MobileNavigation({
                       </Link>
                     )
                   })}
-                  <button
-                    type="button"
-                    onClick={handleRegister}
+                  <Link
+                    href={ctaHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setIsOpen(false)}
                     className="m-nav-link mt-7 inline-flex items-center justify-center gap-2 rounded-full bg-[color:var(--cinopse-accent)] px-6 py-3 text-sm font-medium text-[color:var(--cinopse-primary-deep)]"
                   >
-                    {registerLabel}
+                    {ctaLabel}
                     <span aria-hidden="true">→</span>
-                  </button>
+                  </Link>
                 </nav>
 
                 <p className="text-[11px] leading-5 tracking-[0.14em] text-white/55 uppercase">
-                  Combined Initiative for Nurturing Outcomes through Precision
-                  Medicine with Scientific Evidence
+                  Connecting Specialties. Integrating Science. Improving
+                  Outcomes.
                 </p>
               </div>
             </>,

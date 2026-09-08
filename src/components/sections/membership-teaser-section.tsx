@@ -1,7 +1,6 @@
-import Link from "next/link"
-import { ArrowRight } from "lucide-react"
-
 import { SectionHeading } from "@/components/shared/section-heading"
+// TODO: re-enable when membership enrolment is ready to go live.
+// import { MembershipJoinModal } from "@/components/sections/membership-join-modal"
 
 export type MembershipTeaserCategory = {
   title: string
@@ -13,8 +12,6 @@ export type MembershipTeaserSectionProps = {
   title: string
   description: string
   categories: MembershipTeaserCategory[]
-  ctaLabel: string
-  ctaHref: string
 }
 
 export function MembershipTeaserSection({
@@ -22,8 +19,6 @@ export function MembershipTeaserSection({
   title,
   description,
   categories,
-  ctaLabel,
-  ctaHref,
 }: MembershipTeaserSectionProps) {
   return (
     <section id="membership" className="bg-[color:var(--cinopse-surface)] py-16 md:py-20 lg:py-24">
@@ -56,15 +51,11 @@ export function MembershipTeaserSection({
           ))}
         </div>
 
+        {/* TODO: re-enable when membership enrolment is ready to go live.
         <div data-reveal className="mt-10 flex justify-center">
-          <Link
-            href={ctaHref}
-            className="group inline-flex items-center gap-2.5 rounded-full bg-[color:var(--cinopse-primary)] px-7 py-4 text-[12.5px] leading-none font-medium text-white transition-[transform,box-shadow] duration-300 ease-[cubic-bezier(.22,.9,.18,1)] hover:-translate-y-0.5 hover:shadow-[0_12px_26px_rgba(27,75,150,0.35)]"
-          >
-            {ctaLabel}
-            <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
-          </Link>
+          <MembershipJoinModal triggerLabel="Join Membership" />
         </div>
+        */}
       </div>
     </section>
   )

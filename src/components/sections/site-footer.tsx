@@ -29,6 +29,7 @@ export type SiteFooterProps = {
   contacts: string[]
   socialLinks: FooterSocialLink[]
   copyright: string
+  tagline?: string
 }
 
 export function SiteFooter({
@@ -39,6 +40,7 @@ export function SiteFooter({
   contacts,
   socialLinks,
   copyright,
+  tagline,
 }: SiteFooterProps) {
   const [brandColumn] = columns
 
@@ -148,7 +150,7 @@ export function SiteFooter({
 
       <div className="relative z-10 mx-auto mt-14 flex max-w-[1160px] flex-wrap justify-between gap-4 border-t border-white/10 px-7 pt-6 text-[11px] leading-5 font-light text-white/40">
         <p className="m-0">{copyright}</p>
-        <p className="m-0">One Place. One Agenda. One Vision.</p>
+        {tagline ? <p className="m-0">{tagline}</p> : null}
       </div>
     </footer>
   )

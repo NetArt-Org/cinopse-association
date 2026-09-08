@@ -1,13 +1,7 @@
 import type { Metadata } from "next";
 import { Fraunces, Inter } from "next/font/google";
-import Script from "next/script";
 import { Toaster } from "sonner";
-import { UtmCapture } from "@/components/layout/utm-capture";
-import "react-phone-number-input/style.css";
 import "./globals.css";
-
-const META_PIXEL_ID = "2631145093984242";
-const GA_MEASUREMENT_ID = "G-ZJ3GZPFTJQ";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -24,51 +18,38 @@ const fraunces = Fraunces({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.cinopse.in"),
+  metadataBase: new URL("https://www.cinopseassociation.in"),
   title: {
-    default: "CINOPSE India 2026",
-    template: "%s | CINOPSE India 2026",
+    default: "Karnataka CINOPSE Association (KCA)",
+    template: "%s | Karnataka CINOPSE Association",
   },
   description:
-    "CINOPSE India 2026 is a multidisciplinary medical conference for cardio, renal, obesity, pulmonary and sleep medicine, taking place on Sunday, 27 September 2026 at Jawaharlal Nehru Planetarium, Bengaluru.",
+    "Karnataka CINOPSE Association (KCA) is a multidisciplinary academic and professional association integrating Cardiology, Neurology, Nephrology, Pulmonology, Metabolic Medicine and Sleep Medicine through evidence-based, precision-oriented healthcare.",
   keywords: [
-    "CINOPSE India 2026",
-    "medical conference Bengaluru",
-    "cardio renal obesity pulmonary sleep medicine",
-    "CME summit India",
-    "Jawaharlal Nehru Planetarium Bengaluru",
+    "Karnataka CINOPSE Association",
+    "KCA",
+    "multidisciplinary medical association Karnataka",
+    "cardio neuro renal pulmonary metabolic sleep medicine",
+    "CME association India",
+    "CINOPSE India",
   ],
-  authors: [{ name: "CINOPSE India" }],
-  creator: "CINOPSE India",
-  publisher: "CINOPSE India",
-  icons: {
-    icon: "/logo.jpg",
-    shortcut: "/logo.jpg",
-    apple: "/logo.jpg",
-  },
+  authors: [{ name: "Karnataka CINOPSE Association" }],
+  creator: "Karnataka CINOPSE Association",
+  publisher: "Karnataka CINOPSE Association",
   openGraph: {
-    title: "CINOPSE India 2026",
+    title: "Karnataka CINOPSE Association (KCA)",
     description:
-      "A multidisciplinary CME summit for cardio, renal, obesity, pulmonary and sleep medicine on Sunday, 27 September 2026 in Bengaluru.",
-    url: "https://www.cinopse.in",
-    siteName: "CINOPSE India 2026",
-    images: [
-      {
-        url: "/logo.jpg",
-        width: 512,
-        height: 512,
-        alt: "CINOPSE India 2026 logo",
-      },
-    ],
+      "Connecting Specialties. Integrating Science. Improving Outcomes. A multidisciplinary academic and professional association for integrated, evidence-based healthcare.",
+    url: "https://www.cinopseassociation.in",
+    siteName: "Karnataka CINOPSE Association",
     locale: "en_IN",
     type: "website",
   },
   twitter: {
     card: "summary",
-    title: "CINOPSE India 2026",
+    title: "Karnataka CINOPSE Association (KCA)",
     description:
-      "A multidisciplinary CME summit on Sunday, 27 September 2026 at Jawaharlal Nehru Planetarium, Bengaluru.",
-    images: ["/logo.jpg"],
+      "Connecting Specialties. Integrating Science. Improving Outcomes.",
   },
 };
 
@@ -82,47 +63,7 @@ export default function RootLayout({
       lang="en"
       className={`h-full antialiased ${inter.variable} ${fraunces.variable}`}
     >
-      <head>
-        {/* Google tag (gtag.js) */}
-        <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
-          strategy="afterInteractive"
-        />
-        <Script id="ga-gtag" strategy="afterInteractive">
-          {`window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', '${GA_MEASUREMENT_ID}');`}
-        </Script>
-        {/* End Google tag */}
-
-        {/* Meta Pixel Code */}
-        <Script id="meta-pixel" strategy="afterInteractive">
-          {`!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '${META_PIXEL_ID}');
-fbq('track', 'PageView');`}
-        </Script>
-        {/* End Meta Pixel Code */}
-      </head>
       <body className="min-h-full flex flex-col" suppressHydrationWarning>
-        <noscript>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            height="1"
-            width="1"
-            style={{ display: "none" }}
-            alt=""
-            src={`https://www.facebook.com/tr?id=${META_PIXEL_ID}&ev=PageView&noscript=1`}
-          />
-        </noscript>
-        <UtmCapture />
         {children}
         <Toaster richColors position="top-right" closeButton />
       </body>
