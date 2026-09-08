@@ -1,6 +1,5 @@
 "use client"
 
-import Image from "next/image"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { useEffect, useState } from "react"
@@ -59,21 +58,8 @@ export function SiteHeader({ items }: { items: NavItem[] }) {
               className="flex items-center gap-2.5 text-white"
               aria-label="Karnataka CINOPSE Association home"
             >
-              <Image
-                src="/logo.jpg"
-                alt="CINOPSE logo"
-                width={36}
-                height={36}
-                priority
-                className="size-9 shrink-0 rounded-full bg-white object-cover shadow-[0_3px_10px_rgba(6,26,58,0.3)]"
-              />
-              <span className="grid gap-1">
-                <span className="max-w-[24ch] font-display text-[clamp(13px,3.2vw,19px)] leading-tight font-semibold tracking-[0.01em] text-balance text-white">
-                  KARNATAKA CINOPSE ASSOCIATION
-                </span>
-                <span className="block max-w-[220px] font-sans text-[6.5px] leading-[1.25] font-medium tracking-[0.07em] text-white/62 uppercase sm:max-w-[280px] sm:text-[7.5px] min-[1120px]:max-w-none min-[1120px]:text-[8.5px]">
-                  Connecting Specialties. Integrating Science. Improving Outcomes.
-                </span>
+              <span className="font-display text-[clamp(13px,3.2vw,19px)] leading-tight font-semibold tracking-[0.01em] text-balance text-white">
+                KARNATAKA CINOPSE ASSOCIATION
               </span>
             </Link>
 

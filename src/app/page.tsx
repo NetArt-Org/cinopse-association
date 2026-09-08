@@ -6,7 +6,6 @@ import { HeroSection } from "@/components/sections/hero-section"
 import type { HeroSectionProps } from "@/components/sections/hero-section"
 import { MembershipTeaserSection } from "@/components/sections/membership-teaser-section"
 import { NumberedListSection } from "@/components/sections/numbered-list-section"
-import { OrganizingCommitteeSection } from "@/components/sections/organizing-committee-section"
 import { SiteFooter } from "@/components/sections/site-footer"
 import { WhatMakesDifferentSection } from "@/components/sections/what-makes-different-section"
 import { policyFooterLinks } from "@/lib/policy-pages"
@@ -16,97 +15,15 @@ const navItems = [
   { label: "About", href: "/#about" },
   { label: "Aims & Objectives", href: "/#aims" },
   { label: "Membership", href: "/#membership" },
-  { label: "Committee", href: "/#leadership" },
 ]
 
 const hero: HeroSectionProps = {
-  logo: {
-    src: "/logo.jpg",
-    alt: "CINOPSE logo",
-  },
   backgroundImage: {
     src: "/images/cinopse-hero-cover.png",
     alt: "Jawaharlal Nehru Planetarium and the Bengaluru skyline at dusk",
   },
   title: "CINOPSE India 2026",
   ctaHref: "https://cinopse.in",
-}
-
-const committee = {
-  eyebrow: "Leadership",
-  title: "Organizing Committee",
-  description:
-    "The people shaping the agenda, the science, and the experience of CINOPSE India 2026.",
-  leaders: [
-    {
-      initials: "MM",
-      name: "Dr Murali Mohan BV",
-      role: "President",
-      affiliation: "Cinopse",
-      image: "/doctor/murali-mohan.jpeg",
-    },
-    {
-      initials: "SK",
-      name: "Dr Santosh KM",
-      role: "Organising Chairman",
-      affiliation: "Cinopse",
-      image: "/doctor/santosh-km.jpeg",
-    },
-    {
-      initials: "VB",
-      name: "Dr Vinod Babu Veerapalli",
-      role: "Organising Co-Chairperson",
-      affiliation: "Cinopse",
-      image: "/doctor/vinod-babu.jpeg",
-    },
-    {
-      initials: "SK",
-      name: "Dr Sheetal Kamat",
-      role: "Organising Secretary",
-      affiliation: "Cinopse",
-      image: "/doctor/sheetal-kamat.jpeg",
-    },
-    {
-      initials: "KS",
-      name: "Dr Karthik SM",
-      role: "Organising Treasurer",
-      affiliation: "Cinopse",
-      image: "/doctor/kartik-sm.jpeg",
-    },
-  ],
-  members: [
-    {
-      initials: "UH",
-      name: "Dr Usha Humbi",
-      caption: "Scientific Committee · Cinopse",
-      image: "/doctor/usha-humbi.jpeg",
-    },
-    {
-      initials: "SM",
-      name: "Dr Soumya M S",
-      caption: "Scientific Committee · Cinopse",
-      image: "/doctor/soumya-ms.jpeg",
-    },
-    {
-      initials: "PG",
-      name: "Dr Praveen Gangadhara",
-      caption: "Scientific Committee · Cinopse",
-      image: "/doctor/praveen-gangadhara.jpeg",
-    },
-    {
-      initials: "PM",
-      name: "Dr Prathima Murthy",
-      caption: "Scientific Committee · Cinopse",
-      image: "/doctor/prathima-murthy.jpeg",
-    },
-    {
-      initials: "✣",
-      name: "Hospitality & Logistics",
-      caption: "Hospitality & Logistics",
-      variant: "logistics" as const,
-      names: ["Mr Vishnu", "Mr Akash", "Mr Stephen", "Ms Bhavishya"],
-    },
-  ],
 }
 
 const about = {
@@ -206,10 +123,6 @@ const footer = {
     {
       title: "Karnataka",
       brandEmphasis: "CINOPSE Association",
-      logo: {
-        src: "/logo.jpg",
-        alt: "CINOPSE logo",
-      },
       paragraphs: [
         "Connecting Specialties. Integrating Science. Improving Outcomes.",
         "A multidisciplinary academic and professional association integrating Cardiology, Neurology, Nephrology, Pulmonology, Metabolic Medicine and Sleep Medicine.",
@@ -220,7 +133,7 @@ const footer = {
   links: policyFooterLinks,
   contactTitle: "Contact",
   contacts: [
-    "info@cinopseassociation.in",
+    "cinopseassociation@gmail.com",
     "www.cinopseassociation.in",
     "Karnataka, India",
   ],
@@ -237,7 +150,6 @@ export default function Home() {
         <main>
           <HeroSection {...hero} />
           <AboutSection {...about} />
-          <OrganizingCommitteeSection {...committee} />
           <WhatMakesDifferentSection {...whatMakesDifferent} />
           <NumberedListSection {...aimsTeaser} />
           <CinopseRelationshipSection {...cinopseRelationship} />

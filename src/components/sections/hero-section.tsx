@@ -2,10 +2,6 @@ import Image from "next/image"
 import Link from "next/link"
 
 export type HeroSectionProps = {
-  logo: {
-    src: string
-    alt: string
-  }
   backgroundImage: {
     src: string
     alt: string
@@ -15,7 +11,6 @@ export type HeroSectionProps = {
 }
 
 export function HeroSection({
-  logo,
   backgroundImage,
   title,
   ctaHref,
@@ -43,15 +38,7 @@ export function HeroSection({
         />
 
         <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center text-white">
-          <Image
-            src={logo.src}
-            alt={logo.alt}
-            width={112}
-            height={112}
-            priority
-            className="size-[84px] shrink-0 rounded-full bg-white object-cover shadow-[0_10px_30px_rgba(0,0,0,.35)] sm:size-[112px]"
-          />
-          <h1 className="font-display mt-7 text-[clamp(36px,7.5vw,84px)] leading-[1.05] font-semibold tracking-[-0.02em]">
+          <h1 className="font-display text-[clamp(36px,7.5vw,84px)] leading-[1.05] font-semibold tracking-[-0.02em]">
             {title}
           </h1>
         </div>

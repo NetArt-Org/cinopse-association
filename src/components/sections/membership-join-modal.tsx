@@ -20,7 +20,7 @@ const CATEGORIES = [
   "Honorary Member",
 ]
 
-const CONTACT_EMAIL = "info@cinopseassociation.in"
+const CONTACT_EMAIL = "cinopseassociation@gmail.com"
 // The HTML `pattern` attribute is matched using the regex "v" (unicodeSets)
 // mode, which is stricter than plain JS regex about unescaped punctuation
 // inside character classes — "-", "/" and "&" all need escaping there or the

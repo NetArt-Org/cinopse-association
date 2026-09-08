@@ -4,14 +4,12 @@ export const policyNavItems = [
   { label: "About", href: "/#about" },
   { label: "Aims & Objectives", href: "/#aims" },
   { label: "Membership", href: "/#membership" },
-  { label: "Committee", href: "/#leadership" },
 ]
 
 export const policyFooterLinks: FooterLinkItem[] = [
   { label: "About KCA", href: "/#about" },
   { label: "Aims & Objectives", href: "/#aims" },
   { label: "Membership", href: "/#membership" },
-  { label: "Organising Committee", href: "/#leadership" },
   { label: "Privacy Policy", href: "/privacy-policy" },
   { label: "Terms & Conditions", href: "/terms-and-conditions" },
 ]
@@ -21,10 +19,6 @@ export const policyFooter = {
     {
       title: "Karnataka",
       brandEmphasis: "CINOPSE Association",
-      logo: {
-        src: "/logo.jpg",
-        alt: "CINOPSE logo",
-      },
       paragraphs: [
         "Connecting Specialties. Integrating Science. Improving Outcomes.",
         "A multidisciplinary academic and professional association integrating Cardiology, Neurology, Nephrology, Pulmonology, Metabolic Medicine and Sleep Medicine.",
@@ -35,7 +29,7 @@ export const policyFooter = {
   links: policyFooterLinks,
   contactTitle: "Contact",
   contacts: [
-    "info@cinopseassociation.in",
+    "cinopseassociation@gmail.com",
     "www.cinopseassociation.in",
     "Karnataka, India",
   ],
@@ -59,7 +53,7 @@ export type PolicyPage = {
 }
 
 const organiserContact =
-  "For queries, contact Karnataka CINOPSE Association (KCA) at info@cinopseassociation.in."
+  "For queries, contact Karnataka CINOPSE Association (KCA) at cinopseassociation@gmail.com."
 
 export const privacyPolicy: PolicyPage = {
   eyebrow: "Compliance",

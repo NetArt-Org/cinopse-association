@@ -1,12 +1,7 @@
-import Image from "next/image"
 import Link from "next/link"
 
 export type FooterColumn = {
   title: string
-  logo?: {
-    src: string
-    alt: string
-  }
   brandEmphasis?: string
   paragraphs: string[]
 }
@@ -53,15 +48,6 @@ export function SiteFooter({
       <div className="relative z-10 mx-auto grid max-w-[1160px] gap-9 px-7 md:grid-cols-[1.4fr_1fr_1fr] md:gap-[50px]">
         <div data-reveal>
           <Link href="/#home" className="mb-3.5 inline-flex items-center gap-3">
-            {brandColumn.logo ? (
-              <Image
-                src={brandColumn.logo.src}
-                alt={brandColumn.logo.alt}
-                width={44}
-                height={44}
-                className="size-11 rounded-full bg-white object-cover shadow-[0_3px_10px_rgba(6,26,58,0.3)]"
-              />
-            ) : null}
             <span className="font-display text-[26px] leading-none font-semibold text-white">
               {brandColumn.title}{" "}
               {brandColumn.brandEmphasis ? (
