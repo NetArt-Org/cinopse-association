@@ -18,6 +18,10 @@ export const policyFooter = {
   columns: [
     {
       title: "Karnataka",
+      logo: {
+        src: "/cinopseassociation-logo.png",
+        alt: "Karnataka CINOPSE Association logo",
+      },
       brandEmphasis: "CINOPSE Association",
       paragraphs: [
         "Connecting Specialties. Integrating Science. Improving Outcomes.",

@@ -92,19 +92,16 @@ export function MobileNavigation({
                 <div className="flex items-center justify-between border-b border-white/15 pb-5">
                   <div className="flex items-center gap-3">
                     <Image
-                      src="/logo.jpg"
-                      alt="CINOPSE logo"
-                      width={40}
-                      height={40}
-                      className="size-10 shrink-0 rounded-full bg-white object-cover shadow-[0_3px_10px_rgba(6,26,58,0.3)]"
+                      src="/cinopseassociation-logo.png"
+                      alt="Karnataka CINOPSE Association logo"
+                      width={48}
+                      height={48}
+                      className="size-12 shrink-0 object-contain"
                     />
-                    <span className="grid gap-1">
-                      <span className="font-display text-sm leading-tight font-semibold">
-                        CINOPSE INDIA MEDICAL SUMMIT PVT LTD
-                      </span>
-                      <span className="max-w-[220px] font-sans text-[8px] leading-[1.35] tracking-[0.08em] text-white/60 uppercase">
-                        Collaboration with Karnataka Cinopse Association
-                      </span>
+                    <span className="font-display text-base leading-tight font-semibold">
+                      KARNATAKA CINOPSE
+                      <br />
+                      ASSOCIATION
                     </span>
                   </div>
                   <button
