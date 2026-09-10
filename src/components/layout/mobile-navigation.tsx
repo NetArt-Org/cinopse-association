@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { ArrowUpRight, Menu, X } from "lucide-react"
@@ -90,11 +91,20 @@ export function MobileNavigation({
               >
                 <div className="flex items-center justify-between border-b border-white/15 pb-5">
                   <div className="flex items-center gap-3">
-                    <span className="font-display text-base font-semibold">
-                      Karnataka{" "}
-                      <em className="block font-sans text-[10px] tracking-[0.18em] text-[color:var(--cinopse-accent)] not-italic">
-                        CINOPSE ASSOCIATION
-                      </em>
+                    <Image
+                      src="/logo.jpg"
+                      alt="CINOPSE logo"
+                      width={40}
+                      height={40}
+                      className="size-10 shrink-0 rounded-full bg-white object-cover shadow-[0_3px_10px_rgba(6,26,58,0.3)]"
+                    />
+                    <span className="grid gap-1">
+                      <span className="font-display text-sm leading-tight font-semibold">
+                        CINOPSE INDIA MEDICAL SUMMIT PVT LTD
+                      </span>
+                      <span className="max-w-[220px] font-sans text-[8px] leading-[1.35] tracking-[0.08em] text-white/60 uppercase">
+                        Collaboration with Karnataka Cinopse Association
+                      </span>
                     </span>
                   </div>
                   <button
